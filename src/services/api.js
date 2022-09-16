@@ -1,5 +1,7 @@
 const baseUrl = "http://hp-api.herokuapp.com/api/characters";
 
+// this is a git branching test. This message is on fixed-header branch
+
 export const getCharacters = async () => {
   const exitData=
   fetch(baseUrl)
