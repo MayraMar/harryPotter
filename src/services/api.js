@@ -1,0 +1,40 @@
+const baseUrl = "http://hp-api.herokuapp.com/api/characters";
+
+export const getCharacters = async () => {
+  const exitData=
+  fetch(baseUrl)
+    .then((response) => response.json())
+    //  .then ((data)=>{
+    //    data.map((elem, index)=>elem.id=index)})
+    //   console.log(data)
+    //   return data})
+    console.log(exitData) 
+    return exitData; //da una promise
+};
+
+export const getCharactersData = async () => {
+  // const exitData=
+  fetch(baseUrl)
+    .then((response) => response.json())
+    .then ((data)=>{
+      data.map((elem, index)=>elem.id=index)
+      console.log(data)
+      return data})
+    // console.log(exitData) 
+    // return exitData; //da una promise
+};
+
+export const addId =(array)=>{
+  array.map((elem, index)=>elem.id=index);
+}
+
+
+export const getCharacterById = async (id) => {
+  console.log("id: ",id)
+  const personaje=fetch(baseUrl)
+    .then((response) => response.json())
+    .then((data) => data[id])
+    
+    
+    return personaje;
+};

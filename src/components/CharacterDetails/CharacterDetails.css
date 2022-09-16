@@ -1,0 +1,19 @@
+.container{
+    background-color: lightgray;
+    width: 75vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    margin: 10vh 12vw;
+    justify-content: space-evenly
+    
+}
+
+.container img{
+    width:90%;
+   
+}
+
+.datos{
+    text-align: left;
+}

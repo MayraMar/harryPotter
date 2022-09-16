@@ -1,0 +1,14 @@
+.personaje{
+    text-align: center;
+    font-size: 1.5rem;
+    width: 18%;
+    margin-top:3%;
+    margin-left: 1%;
+    background-color: darkgray;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.personaje img{
+    width:60%
+}

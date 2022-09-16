@@ -1,0 +1,8 @@
+.personajes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div{
+    text-align: center;
+}
