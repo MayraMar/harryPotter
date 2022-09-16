@@ -1,27 +1,31 @@
 // import "./App.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-
-import CharacterList from "./components/CharacterList/CharacterList"
-import Welcome from "./components/Welcome/Welcome"
+import CharacterList from "./components/CharacterList/CharacterList";
+import Welcome from "./components/Welcome/Welcome";
 import CharacterDetails from "./components/CharacterDetails/CharacterDetails";
 import SearchResuts from "./components/SearchResults";
-
+import Header from "./components/Header/Header";
+import "animate.css";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Welcome />}></Route>
-          <Route path="/characters/:selection" element={<CharacterList />}></Route>
-          <Route path="/character/:id" element={<CharacterDetails/>}></Route>
-          <Route path="/search/:param" element={<SearchResuts/>}></Route>
-        </Routes>
-      </BrowserRouter>
+    <React.Fragment>
+      <Header />
       
-      
-    </>
+
+      <Routes>
+        <Route exact path="/" element={<Welcome />}></Route>
+        <Route
+          path="/characters/:selection"
+          element={<CharacterList />}
+        ></Route>
+        <Route path="/character/:id" element={<CharacterDetails />}></Route>
+        <Route path="/search/:param" element={<SearchResuts />}></Route>
+      </Routes>
+    </React.Fragment>
   );
 }
 

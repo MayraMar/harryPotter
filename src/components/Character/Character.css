@@ -1,14 +1,19 @@
 .personaje{
     text-align: center;
     font-size: 1.5rem;
-    width: 18%;
+    width: 20%;
     margin-top:3%;
     margin-left: 1%;
     background-color: darkgray;
     border-radius: 15px;
     text-decoration: none;
+    padding-bottom: 3rem;
 }
 
 .personaje img{
-    width:60%
+    object-fit: cover;
+    width:14rem;
+    height: 14rem;
+    border-radius: 50%;
+    margin-bottom: 2.5rem;
 }

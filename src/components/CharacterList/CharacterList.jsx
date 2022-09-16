@@ -5,26 +5,24 @@ import Character from "../Character";
 import "./Characterlist.css";
 import { useParams } from "react-router-dom";
 
-export default function CharacterList(props) {
+export default function CharacterList() {
   const [personajes, setPersonajes] = useState([]);
   const [ready, setReady] = useState(false);
   const [page, setPage] = useState(null);
-  const [personajesShow, setPersonajesShow] = useState([]);
   const { selection } = useParams();
-  const [param, setParam] = useState("");
+  const [personajesShow, setPersonajesShow] = useState(personajes);
 
-  const searchParam = props.param;
+  useEffect(() => {
+    setReady(false);
+  }, [selection]);
 
   useEffect(() => {
     if (!ready) {
-      // getCharacters().then((chars) => {
-      //   addId(chars);
+      getCharacters().then((chars) => {
+        chars.map((elem, index) => (elem.id = index));
 
-         getCharacters().then((chars) => {
-           chars.map((elem, index)=>elem.id=index);
+        console.log(chars);
 
-         console.log(chars)
-        
         switch (selection) {
           case "all":
             setPersonajes(chars);
@@ -39,32 +37,37 @@ export default function CharacterList(props) {
             const staff = chars.filter((elem) => elem.hogwartsStaff === true);
             setPersonajes(staff);
             break;
-          case "search":
-            //const searchedItems=chars.filter (elem => elem.name.match(/potter.*/))
-            console.log("Busqueda por parámetro");
-            console.log(param);
-            const searchedItems = chars.filter(
-              (elem) => elem.name === "Harry Potter"
-            );
-
-            setPersonajes(searchedItems);
+          case "Gryffindor":
+            const griffindor = chars.filter((elem) => elem.house === "Gryffindor");
+            setPersonajes(griffindor);
             break;
           default:
             setPersonajes(chars);
         }
+        console.log("Estoy dentro del useEffect. Selection= " + selection);
+
         setReady(true);
-        setPage(0);
+        setPage(1);
       });
     }
-  }, [ready, selection]);
+  }, [selection, ready]);
 
-  // useEffect(() => {
-  //   if (ready) {
-  //     setPersonajesShow(personajes.splice(page + 20));
+  useEffect(() => {
+    if (ready) {
+      setPersonajesShow(personajes.slice((page-1)*4, page*4));
 
-  //     console.log(personajesShow);
-  //   }
-  // }, [page]);
+      console.log(personajesShow);
+    }
+  }, [page, ready]);
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleNextPage = () => setPage (page+1)
+  
 
   if (!ready) {
     return <h3>Cargando a los Personajes</h3>;
@@ -73,9 +76,14 @@ export default function CharacterList(props) {
   return (
     <div>
       <h1>{selection} characters</h1>
+      <div className="pages">
+        <button onClick={handlePrevPage}>Previous Page</button>
+        <span>Page {page}</span>
+        <button onClick={handleNextPage}>Next Page</button>
+      </div>
 
       <div className="personajes">
-        {personajes.map((element) => (
+        {personajesShow.map((element) => (
           <Character key={element.id} {...element} />
         ))}
       </div>
