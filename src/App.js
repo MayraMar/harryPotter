@@ -3,13 +3,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-
 import CharacterList from "./components/CharacterList"
 import Welcome from "./components/Welcome"
 import CharacterDetails from "./components/CharacterDetails";
 import SearchResuts from "./components/SearchResults";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import "animate.css";
 
 function App() {

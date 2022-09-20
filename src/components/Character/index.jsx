@@ -1,9 +1,9 @@
-import "./Character.css";
+import styles from "./Character.module.css";
 import { Link } from "react-router-dom";
 
 export default function Character(props) {
   return (
-    <div className="personaje">
+    <div className={styles.personaje}>
       <h3>{props.name}</h3>
       <img src={props.image} alt={props.name}></img>
       

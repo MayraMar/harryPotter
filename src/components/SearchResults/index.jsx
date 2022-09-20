@@ -2,7 +2,7 @@ import { getCharacters } from "../../services/api";
 import { useState } from "react";
 import { useEffect } from "react";
 import Character from "../Character";
-
+import styles from "./SearchResults.module.css"
 import { useParams } from "react-router-dom";
 
 export default function SearchResuts() {
@@ -15,6 +15,10 @@ export default function SearchResuts() {
     const regex= new RegExp(param, "gmi")
     return regex.test(value);
   }
+
+  useEffect(() => {
+    setReady(false);
+  }, [param]);
 
   useEffect(() => {
     console.log(param);
@@ -32,7 +36,7 @@ export default function SearchResuts() {
         setReady(true);
       });
     }
-  }, [ready]);
+  }, [param,ready]);
 
   // useEffect(() => {
   //   if (ready) {

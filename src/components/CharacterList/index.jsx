@@ -38,8 +38,28 @@ export default function CharacterList() {
             setPersonajes(staff);
             break;
           case "Gryffindor":
-            const griffindor = chars.filter((elem) => elem.house === "Gryffindor");
+            const griffindor = chars.filter(
+              (elem) => elem.house === "Gryffindor"
+            );
             setPersonajes(griffindor);
+            break;
+          case "Hufflepuff":
+            const hufflepuff = chars.filter(
+              (elem) => elem.house === "Hufflepuff"
+            );
+            setPersonajes(hufflepuff);
+            break;
+          case "Ravenclaw":
+            const ravenclaw = chars.filter(
+              (elem) => elem.house === "Ravenclaw"
+            );
+            setPersonajes(ravenclaw);
+            break;
+          case "Slytherin":
+            const slytherin = chars.filter(
+              (elem) => elem.house === "Slytherin"
+            );
+            setPersonajes(slytherin);
             break;
           default:
             setPersonajes(chars);
@@ -54,7 +74,7 @@ export default function CharacterList() {
 
   useEffect(() => {
     if (ready) {
-      setPersonajesShow(personajes.slice((page-1)*4, page*4));
+      setPersonajesShow(personajes.slice((page - 1) * 4, page * 4));
 
       console.log(personajesShow);
     }
@@ -66,8 +86,7 @@ export default function CharacterList() {
     }
   };
 
-  const handleNextPage = () => setPage (page+1)
-  
+  const handleNextPage = () => setPage(page + 1);
 
   if (!ready) {
     return <h3>Cargando a los Personajes</h3>;

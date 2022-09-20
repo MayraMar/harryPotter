@@ -1,29 +1,45 @@
-.lista{
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-    background-color: black;
-    margin:12px;
-    padding: 1rem;
+.lista {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  background-color: black;
+  margin: 2rem;
+  padding: 1rem;
+  width: 50%;
+}
+
+.lista a{
+    text-decoration: none;
     color: white;
-    
-}
-
-.casas{
-    background-color: grey;
-    padding: 0.1rem;
-}
-
-li{
     display: flex;
     align-items: center;
-    
 }
 
-.casas li {
-    flex-direction: column;
+.container {
+  display: flex;
 }
-img{
-margin: 1rem;
-width: 4rem;
+
+.casas {
+  background-color: grey;
+  padding: 0.1rem;
+  width: 40%;
+}
+
+.imgcasas {
+  border-radius: 50%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.lista a {
+  flex-direction: column;
+}
+.logo {
+  margin: 1rem;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
 }
