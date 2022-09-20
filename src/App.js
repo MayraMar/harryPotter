@@ -2,9 +2,9 @@
 
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
-import CharacterList from "./components/CharacterList/CharacterList"
-import Welcome from "./components/Welcome/Welcome"
-import CharacterDetails from "./components/CharacterDetails/CharacterDetails";
+import CharacterList from "./components/CharacterList"
+import Welcome from "./components/Welcome"
+import CharacterDetails from "./components/CharacterDetails";
 import SearchResuts from "./components/SearchResults";
 
 
