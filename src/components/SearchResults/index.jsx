@@ -52,9 +52,9 @@ export default function SearchResuts() {
 
   return (
     <div>
-      <h1> Characters matching "{param}"</h1>
+      <h1 className={styles.title}> Characters matching "{param}"</h1>
 
-      <div className="personajes">
+      <div className={styles.personajes}>
         {personajes.map((element) => (
           <Character key={element.id} {...element} />
         ))}

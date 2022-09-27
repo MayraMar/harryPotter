@@ -1,3 +1,7 @@
+.title {
+    margin-bottom: 1rem;
+}
+
 .personajes{
     display: flex;
     flex-wrap: wrap;
@@ -12,5 +16,11 @@ div{
 .pages{
     display: flex;
     justify-content: space-between;
-    margin: 0% 5%;
+    margin: 5% 12%;
+    
+}
+
+.pages span{
+    font-size: 1.2rem;
+    font-weight: 600;
 }

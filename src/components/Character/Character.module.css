@@ -17,3 +17,8 @@
     border-radius: 50%;
     margin-bottom: 2.5rem;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,10 @@
+.title {
+    margin-bottom: 1rem;
+}
+
+.personajes{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0% 8%;
+    justify-content: space-evenly;
+}

@@ -1,9 +1,11 @@
-import { getCharacters } from "../../services/api";
+import { getCharacters, capitalizeFirstLetter } from "../../services/api";
 import { useState } from "react";
 import { useEffect } from "react";
 import Character from "../Character";
 import "./Characterlist.css";
 import { useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 export default function CharacterList() {
   const [personajes, setPersonajes] = useState([]);
@@ -94,17 +96,18 @@ export default function CharacterList() {
 
   return (
     <div>
-      <h1>{selection} characters</h1>
-      <div className="pages">
-        <button onClick={handlePrevPage}>Previous Page</button>
-        <span>Page {page}</span>
-        <button onClick={handleNextPage}>Next Page</button>
-      </div>
+      <h1 className="title">{capitalizeFirstLetter(selection)} characters</h1>
+      
 
       <div className="personajes">
         {personajesShow.map((element) => (
           <Character key={element.id} {...element} />
         ))}
+      </div>
+      <div className="pages">
+        <Button variant="warning" onClick={handlePrevPage}>Previous Page</Button>
+        <span>Page {page}</span>
+        <Button variant="warning" onClick={handleNextPage}>Next Page</Button>
       </div>
     </div>
   );
