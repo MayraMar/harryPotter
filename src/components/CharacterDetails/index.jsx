@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCharacterById } from "../../services/api";
-import "./CharacterDetails.css"
+import styles from "./CharacterDetails.module.css"
 
 export default function CharacterDetails(props) {
   const { id } = useParams();
@@ -22,18 +22,19 @@ export default function CharacterDetails(props) {
     return <h3>Cargando los detalles del personaje...</h3>;
   }
   return (
-    <div className="container">
-      <div className="fotoNombre">
-        <h1>{character.name}</h1>
+    <div className={styles.container}>
+       <h1>{character.name}</h1>
+      <div className={styles.fotoNombre}>
+       
         <img src={character.image} alt={character.name} />
       </div>
-      <div className="datos">
-        <h3>Id: {id}</h3>
-        <h3>House: {character.house}</h3>
-        <h3>Date of birth: {character.dateOfBirth ? character.dateOfBirth :"unknown" }</h3>
-        <h3>Ancestry: {character.ancestry ? character.ancestry : "unknown"}</h3>
-        <h3>Patronus: {character.patronus ? character.patronus: "unknown" }</h3>
-        <h3>Actor: {character.actor}</h3>
+      <div className={styles.divdatos}>
+        <h3>Id: <span className={styles.datos}>{id}</span>  </h3>
+        <h3>House: <span className={styles.datos}>{character.house} </span></h3>
+        <h3>Date of birth: <span className={styles.datos}>{character.dateOfBirth ? character.dateOfBirth :"unknown" }</span></h3>
+        <h3>Ancestry: <span className={styles.datos}>{character.ancestry ? character.ancestry : "unknown"}</span></h3>
+        <h3>Patronus: <span className={styles.datos}>{character.patronus ? character.patronus: "unknown" }</span></h3>
+        <h3>Actor: <span className={styles.datos}>{character.actor}</span></h3>
       </div>
     </div>
   );
