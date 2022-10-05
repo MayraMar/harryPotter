@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import Character from "../Character";
 import "./Characterlist.css";
 import { useParams } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Loading from "../Loading";
 
 export default function CharacterList() {
   const [personajes, setPersonajes] = useState([]);
@@ -91,13 +92,12 @@ export default function CharacterList() {
   const handleNextPage = () => setPage(page + 1);
 
   if (!ready) {
-    return <h3>Cargando a los Personajes</h3>;
+    return <Loading />;
   }
 
   return (
     <div>
       <h1 className="title">{capitalizeFirstLetter(selection)} characters</h1>
-      
 
       <div className="personajes">
         {personajesShow.map((element) => (
@@ -105,9 +105,13 @@ export default function CharacterList() {
         ))}
       </div>
       <div className="pages">
-        <Button variant="warning" onClick={handlePrevPage}>Previous Page</Button>
+        <Button variant="warning" onClick={handlePrevPage}>
+          Previous Page
+        </Button>
         <span>Page {page}</span>
-        <Button variant="warning" onClick={handleNextPage}>Next Page</Button>
+        <Button variant="warning" onClick={handleNextPage}>
+          Next Page
+        </Button>
       </div>
     </div>
   );

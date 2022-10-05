@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Character from "../Character";
 import styles from "./SearchResults.module.css"
 import { useParams } from "react-router-dom";
+import Loading from "../Loading";
 
 export default function SearchResuts() {
   const [personajes, setPersonajes] = useState([]);
@@ -47,7 +48,11 @@ export default function SearchResuts() {
   // }, [page]);
 
   if (!ready) {
-    return <h3>Cargando a los Personajes</h3>;
+   return <Loading />;
+  }
+
+  if (personajes.length==0){
+    return  <h1 className={styles.title}> No characters matching "{param}"</h1>
   }
 
   return (

@@ -19,7 +19,9 @@ export default function Character(props) {
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
         
+        
         <Button variant="secondary"> <Link to={`/character/${props.id}`}>DETAILS</Link></Button>
+        
       </Card.Body>
     </Card>
   );

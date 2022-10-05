@@ -1,4 +1,4 @@
-.personaje{
+/* .personaje{
     text-align: center;
     font-size: 1.5rem;
     width: 20%;
@@ -18,7 +18,14 @@
     margin-bottom: 2.5rem;
 }
 
-a{
+.personaje a{
+    text-decoration: none;
+    color: white;
+} */
+
+
+
+button a{
     text-decoration: none;
     color: white;
 }

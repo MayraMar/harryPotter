@@ -1,23 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .lista {
   display: flex;
   list-style: none;
   justify-content: space-evenly;
-  background-color: black;
   margin: 2rem;
   padding: 1rem;
-  width: 50%;
+  
 }
 
 .lista a{
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
-.container {
-  display: flex;
+.home {
+  width:7%;
+  /* background-color: rgb(232, 232, 232); */
+  color: black;
+  /* border: 2px solid black */
+  
 }
+
+.home a span{
+  color: black;
+  font-weight: bolder;
+}
+
+.homeimg {
+
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+}
+
+.characters{
+  background-color: black;
+  width: 35%;
+}
+
+
+
 
 .casas {
   background-color: grey;
