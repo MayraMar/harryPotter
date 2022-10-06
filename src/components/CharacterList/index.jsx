@@ -14,6 +14,7 @@ export default function CharacterList() {
   const [page, setPage] = useState(null);
   const { selection } = useParams();
   const [personajesShow, setPersonajesShow] = useState(personajes);
+  const [lastPage, setLastPage]=useState(1);
 
   useEffect(() => {
     setReady(false);
@@ -23,7 +24,6 @@ export default function CharacterList() {
     if (!ready) {
       getCharacters().then((chars) => {
         chars.map((elem, index) => (elem.id = index));
-
         console.log(chars);
 
         switch (selection) {
@@ -71,15 +71,17 @@ export default function CharacterList() {
 
         setReady(true);
         setPage(1);
+        // setLastPage(Math.ceil(personajes.length/4));
+        console.log("page: "+ page+". LastPage: "+ lastPage)
       });
     }
   }, [selection, ready]);
 
   useEffect(() => {
+    setLastPage(Math.ceil(personajes.length/4));
     if (ready) {
       setPersonajesShow(personajes.slice((page - 1) * 4, page * 4));
-
-      console.log(personajesShow);
+      // console.log(personajesShow);
     }
   }, [page, ready]);
 
@@ -89,7 +91,12 @@ export default function CharacterList() {
     }
   };
 
-  const handleNextPage = () => setPage(page + 1);
+  const handleNextPage = () => {
+    // console.log("page: "+ page+". LastPage: "+ lastPage)
+    if (page<lastPage){
+    setPage(page + 1);
+  }
+  }
 
   if (!ready) {
     return <Loading />;
@@ -108,7 +115,7 @@ export default function CharacterList() {
         <Button variant="warning" onClick={handlePrevPage}>
           Previous Page
         </Button>
-        <span>Page {page}</span>
+        <span>Page {page}/{lastPage}</span>
         <Button variant="warning" onClick={handleNextPage}>
           Next Page
         </Button>
