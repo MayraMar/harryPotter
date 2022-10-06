@@ -1,4 +1,4 @@
-const baseUrl = "http://hp-api.herokuapp.com/api/characters";
+const baseUrl = "https://hp-api.herokuapp.com/api/characters";
 
 // this is a git branching test. This message is on fixed-header branch
 
