@@ -1,13 +1,15 @@
 .container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .lista {
   display: flex;
   list-style: none;
   justify-content: space-evenly;
-  margin: 2rem;
+  margin: 1rem 2rem;
+
   padding: 1rem;
   
 }
@@ -20,20 +22,19 @@
 }
 
 .home {
-  width:7%;
+  /* width:7%; */
   /* background-color: rgb(232, 232, 232); */
   color: black;
   /* border: 2px solid black */
   
 }
 
-.home a span{
+/* .home a span{
   color: black;
   font-weight: bolder;
-}
+} */
 
 .homeimg {
-
   width: 7rem;
   height: 7rem;
   object-fit: cover;
@@ -42,15 +43,14 @@
 .characters{
   background-color: black;
   width: 35%;
+  min-width: 350px;
 }
-
-
-
 
 .casas {
   background-color: grey;
   padding: 0.1rem;
   width: 40%;
+  min-width: 380px;
 }
 
 .imgcasas {
@@ -66,8 +66,24 @@ li {
   flex-direction: column;
 }
 .logo {
-  margin: 1rem;
+  margin: 0.8rem;
   width: 4rem;
   height: 4rem;
   object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .lista{
+    margin-bottom: 0;
+  }
+.home {
+  text-align: end;
+  margin: 0px;
+  margin-left: 60%;
+}
+  .homeimg {
+    width: 4rem;
+    height: 4rem;
+    
+  }
 }

@@ -14,7 +14,7 @@ export default function Welcome() {
         Welcome to the Harry Potter's Characters Website
       </h1>
       <img
-        style={{ width: "30%", margin: "0", padding: "0" }}
+        style={{ width: "30%", minWidth: "300px", margin: "0", padding: "0" }}
         className="animate__animated animate__rotateIn"
         src="https://uploads.turbologo.com/uploads/design/hq_preview_image/5097676/draw_svg20210617-26747-23281c.svg.png"
         alt="Dancing Logo"

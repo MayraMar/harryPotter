@@ -2,7 +2,7 @@
     text-align: center;
     background-color: gainsboro;
     border-radius: 1rem;
-    margin: 1rem 25%;
+    margin: 1rem 5rem;
     padding: 0.5rem;
 }
 
@@ -30,6 +30,11 @@ form input{
 
 .search img{
     width: 100%;
-    
-    margin-left: 2rem;
+    margin-left: 30%;
+}
+
+@media (max-width: 500px) {
+    .container{
+        font-size: 0.7rem;
+    }
 }
