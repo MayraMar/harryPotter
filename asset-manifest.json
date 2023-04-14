@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/harryPotter/static/css/main.3e249078.css",
+    "main.css": "/harryPotter/static/css/main.c5e27520.css",
     "main.js": "/harryPotter/static/js/main.99941ac8.js",
     "index.html": "/harryPotter/index.html",
-    "main.3e249078.css.map": "/harryPotter/static/css/main.3e249078.css.map",
+    "main.c5e27520.css.map": "/harryPotter/static/css/main.c5e27520.css.map",
     "main.99941ac8.js.map": "/harryPotter/static/js/main.99941ac8.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e249078.css",
+    "static/css/main.c5e27520.css",
     "static/js/main.99941ac8.js"
   ]
 }
